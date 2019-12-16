@@ -1,0 +1,41 @@
+{% extends "home_base.html" %}
+{% block content %}
+<script type="text/javascript" src="../static/js/delete.js"></script>
+<script src="../static/js/jquery-3.4.0.min.js"></script>
+<div class="container-fluid">
+    <h1>View all users</h1>
+    <br>
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <td>ID</td>
+            <td>Name</td>
+            <td>E-mail</td>
+            <td>Manager?</td>
+            <td>Deposit</td>
+            <td>Loan</td>
+            <td>Score</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for info in infos %}
+        <tr>
+            <td>{{ info.id }}</td>
+            <td>{{ info.name }}</td>
+            <td>{{ info.email }}</td>
+            <td>{{ info.manager }}</td>
+            <td>{{ info.account.money }}</td>
+            <td>{{ info.account.loan }}</td>
+            <td>{{ info.account.score }}</td>
+            <td><a href="/freeze/{{ info.id }}"><button type="button" class="btn btn-primary">Freeze</button></a></td>
+            <td><a href="/delete/{{ info.id }}" onclick="sure();return false;"><button type="button" class="btn btn-danger">Delete</button></a> </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/select/{{ obj.id }}"><button type="button" class="button button-glow button-border button-rounded button-primary">Search client</button></a>
+    <br><br>
+    <a href="/home/{{ obj.id }}"><button type="button" class="btn-primary">Home</button></a>
+</div>
+
+{% endblock %}

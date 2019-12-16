@@ -1,0 +1,51 @@
+{% extends 'home_base.html' %}
+{% block content %}
+    <div class="img_loan">
+        <br><br><br><br><br><br><br>
+        <div class="left">
+            <h1 class="h-1">Find a loan</h1>
+            <h2 class="h-2">to your</h2>
+            <h1 class="h-1">plans to life</h1>
+        </div>
+        <br><br><br><br><br><br><br>
+    </div>
+    <div class="subtitle">Let us check your condition</div>
+    <br><br><br><br><br><br><br>
+    <div class="subtable">
+    <table>
+        <tr>
+            <td>
+                <h2>Your User Name is:</h2>
+                <p class="loan">     {{ info.name }}</p>
+                <h2>Your e-mail address is:</h2>
+                <p class="loan">     {{ info.email }}</p>
+                <h3>Your deposit is:</h3>
+                <p class="loan">     {{ info.account.money }}</p>
+                <h3>Your credit score now is:</h3>
+                <p class="loan">     {{ info.account.score }}</p>
+                {% if info.account.loan>0 %}
+                <h3>You have loan under return:</h3>
+                <p class="congratulation">     {{ info.account.loan }}</p>
+                    <br><br>
+                    <div>
+                        <label for="back_loan">How much would you like to repay：</label>
+                        <br>
+                        <input id="back_loan" type="text" name="back_loan">
+                        <br><br>
+                        <a id="back" type="button" class="button button-glow button-rounded button-jumbo" onclick="loan_back({{ info.account.id }})">Repay</a>
+                    </div>
+                {% endif %}
+            </td>
+            <td><img src="../static/img/5.png" id="timg"></td>
+        </tr>
+    </table>
+        <input type="button" class="button button-glow button-rounded button-royal" onclick="cal({{ info.account.money }},{{ info.account.score }},{{ info.account.id }},{{ info.account.loan }})" value="Calculate">
+        <br><br><br><br><br><br><br>
+        <div>
+            <p class="congratulation" id="result"></p>
+            <br><br>
+            <div id="run"></div>
+        </div>
+    <br><br><br><br><br><br><br>
+    </div>
+{% endblock %}

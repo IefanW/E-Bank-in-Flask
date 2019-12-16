@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	{% if title %}
+    <title>{{ title }}</title>
+    {% else %}
+    <title>Bank of Wey</title>
+    {% endif %}
+	<link rel="stylesheet" type="text/css" href="../static/css/htmleaf-demo.css">
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Josefin+Sans:400,700,700italic,600'>
+	<link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+	<link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" href="../static/css/button.css">
+</head>
+<body>
+	<div class="htmleaf-container">
+		<div class="cont_principal">
+        <br><br>
+			<header class="htmleaf-header">
+                <h1>E-Bank of Wey</h1>
+			</header>
+            {% block content %}{% endblock %}
+		</div>
+	</div>
+</body>
+</html>

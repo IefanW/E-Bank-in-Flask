@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+{% block content %}
+    <form action="" method="post">
+        {% for message in get_flashed_messages() %}
+            {{ message }}
+        {% endfor %}
+    <div class="cont_join  ">
+                <br>
+                <h2>Register</h2>
+                <br>
+
+		        <p>User name:</p>
+		        <input type="text" id="Inaccout" class="input_text" name="user"/>
+
+                <p>Email</p>
+                <input type="text" id="Inmail" class="input_text" name="email" placeholder="For finding your password"/>
+
+		        <p>Password:</p>
+		        <input type="password" id="Inpwd" class="input_text" name="pwd1"/>
+
+                <p>Reconfirm your password</p>
+                <input type="password" id="Inrepwd" class="input_text" name="pwd2">
+
+		        <p>Invitation:</p>
+		        <input type="text" class="input_text" name="code"/>
+
+                <br><br><br>
+                <button type="submit" onclick="Re" class="button button-glow button-border button-rounded button-primary">Sign up</button>
+                <button class="button button-glow button-rounded button-royal"><a href="/">Back</a></button>
+		  </div>
+    </form>
+    <script src="../static/js/index.js"></script>
+{% endblock %}

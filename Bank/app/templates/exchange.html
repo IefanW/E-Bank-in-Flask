@@ -1,0 +1,25 @@
+{% extends "home_base.html" %}
+{% block content %}
+    <div class="img_ex">
+        <br><br><br><br><br><br><br>
+        <div class="left">
+            <h1 class="h-1">Deliver love</h1>
+            <h2 class="h-2">to the one</h2>
+            <h1 class="h-1">you love</h1>
+        </div>
+        <br><br><br><br><br><br><br>
+    </div>
+    <div class="container-fluid">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+            <h1>Find your collector</h1>
+            <br><br><br>
+            <label><span><i class="fa fa-hand-o-right"> </i></span></label>
+            <input id="collector_email" type="text" name="collector_email" oninput="OnInput(event,{{ obj.id }})" placeholder="Collector's email">
+            <ul id="list" class="dropdown-menu"></ul>
+            <a href="#" id="trans" type="button" class="buttom button-glow button-rounded button-3d" onclick="send({{ obj.id }})" >Remit</a>
+            <div id="result"></div>
+        </div>
+        <div class="col-md-2"></div>
+    </div>
+{% endblock %}

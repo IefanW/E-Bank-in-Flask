@@ -1,0 +1,24 @@
+{% extends "home_base.html" %}
+
+{% block content %}
+  <h1>Account management</h1>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+  <form action="" method="post" >
+      {{ form.hidden_tag() }}
+      <p>
+          Name<br>
+          {{ form.name(class_='form-control') }}<br>
+          Password<br>
+          {{ form.pwd(class_='form-control') }}<br>
+          E-mail<br>
+          {{ form.email(class_='form-control') }}<br>
+          {% for error in form.pwd.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}<br>
+      </p>
+      <p><input type="submit" class="btn btn-default" value="Save"></p>
+      <td><a href="/home/{{ obj.id }}"><button type="button" class="btn btn-inverse">Back</button></a></td>
+  </form>
+{% endblock %}

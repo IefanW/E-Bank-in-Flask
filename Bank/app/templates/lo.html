@@ -1,0 +1,43 @@
+{% extends "index.html" %}
+{% block content %}
+ <form action="" method="post">
+    <div class="cont_join">
+		    <div class="cont_letras">
+		      <p>Bank</p>
+		      <p>of</p>
+		      <p>Wey</p>
+		    </div>
+
+		    <div class="cont_form_join">
+		        <h2>Login</h2>
+
+		        <p>Account:</p>
+		        <input type="text" id="InputUsername" class="input_text" name="user"/>
+
+		        <p>Password:</p>
+		        <input type="password" id="InputPwd" class="input_text" name="pwd"/>
+
+                <p>Verify</p>
+                <input type="text" id="InputPwd" class="input_text" name="verify"/>
+                <br>
+                <img class="verify_code" src='/code' onclick="this.src='/code?'+ Math.random()">
+
+                <p></p>
+                <button type="submit" class="button button-glow button-border button-rounded button-primary">Login</button>
+
+                <p></p>
+                <a href="/register" class="button button-glow button-border button-rounded button-primary">Sign up</a>
+
+                {% for message in get_flashed_messages() %}
+                <div class="alert-danger">{{ message }}</div>
+                {% endfor %}
+		    </div>
+
+		    <div class="cont_btn_join">
+		        <a href="#" onclick='join_1()'>Join</a>
+		    </div>
+    </div>
+ </form>
+
+    <script src="../static/js/index.js"></script>
+{% endblock %}

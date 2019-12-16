@@ -1,0 +1,15 @@
+{% extends "home_base.html" %}
+{% block content %}
+
+<script src="../static/js/jquery-3.4.0.min.js"></script>
+<script type="text/javascript" src="../static/js/search.js"></script>
+    <h1>Search clients</h1>
+    <h2></h2>
+<div>
+   <label for="send_content">Input here：</label>
+    <input id="send_content" type="text" name="send_content">
+    <input id="send" type="button" value="Search">
+</div>
+<div id="p"></div>
+      <td><a href="/view/{{ obj.id }}"><button type="button" class="btn btn-inverse">Back</button></a></td>
+{% endblock %}
